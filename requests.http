@@ -1,0 +1,80 @@
+@baseUrl = http://127.0.0.1:5000
+
+# создание объявления
+POST {{baseUrl}}/adv
+Content-Type: application/json
+
+{
+    "header": "Ford Focus 3",
+    "description": "Продается автомобиль, отличное состояние. Цена - 600000р.",
+    "owner": "1"
+    }
+
+
+###
+
+# создание пользователя
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+    "name": "Алексей",
+    "email": "app@flask.com",
+    "password": "1234"
+    }
+
+
+###
+
+#обновление объявления
+PATCH {{baseUrl}}/adv/1
+Content-Type: application/json
+
+{  
+    "header": "Opel Astra J",
+    "description": "Продается автомобиль, отличное состояние. Цена - 750000р.",
+    "owner": "Василий"  
+}
+
+
+###
+
+#обновление данных пользователя
+PATCH {{baseUrl}}/user/5
+Content-Type: application/json
+
+{  
+    "name": "Василий",
+    "email": "backend@flask.com",
+    "password": "9999"  
+}
+
+
+###
+
+#получаем объявление по id
+GET {{baseUrl}}/adv/1
+Content-Type: application/json
+
+
+###
+
+#получаем пользователя по id
+GET {{baseUrl}}/user/1
+
+Content-Type: application/json
+
+
+###
+
+#удаляем объявление
+DELETE  {{baseUrl}}/adv/1
+Content-Type: application/json
+
+
+###
+
+
+#удаляем пользователя
+DELETE  {{baseUrl}}/user/4
+Content-Type: application/json
